@@ -13,6 +13,10 @@
                     <div class="validation--error">{{$message}}</div>
                 @enderror
                 <input type="text" id="title" name="title" value="{{$post->title}}">
+
+                <br />
+                <label for="slug">Slug</label>
+                <input type="text" id="slug" name="slug" value="{{$post->slug}}">
             </div>
             <div class="form-group">
                 <label for="content">Content</label>
