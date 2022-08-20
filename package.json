@@ -38,7 +38,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@van-ons/block-editor": "^1.0.0",
+    "@van-ons/block-editor": "github:CakeWP/block-editor",
     "qs": "^6.10.3"
   },
   "peerDependencies": {
