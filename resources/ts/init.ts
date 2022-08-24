@@ -1,10 +1,11 @@
 import EditorSettings from "@van-ons/block-editor/dist/interfaces/editor-settings";
-import { initializeEditor } from "@van-ons/block-editor";
+import { initializeEditor as defaultInitializeEditor } from "@van-ons/block-editor";
 import defaultSettings from "./default-settings";
 
 export const init = (
     target: string|HTMLInputElement|HTMLTextAreaElement,
-    settings: EditorSettings = {}
+    settings: EditorSettings = {},
+    initializeEditor?: (element: HTMLElement, settings: any) => void
 ) => {
     let element
 
@@ -18,5 +19,7 @@ export const init = (
         return
     }
 
-    initializeEditor(element, { ...defaultSettings, ...settings })
+    let initializer = initializeEditor ? initializeEditor : defaultInitializeEditor; 
+
+    initializer(element, { ...defaultSettings, ...settings })
 }
